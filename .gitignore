@@ -1,0 +1,14 @@
+node_modules
+dist
+.void
+.wrangler
+.void-wrangler.jsonc
+.cloudflare
+.shopify.lock
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+# Only for GraphQL editor tooling, and large. `pnpm codegen` recreates it.
+types/*.schema.json

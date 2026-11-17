@@ -1,0 +1,41 @@
+{
+  "name": "shopify-void-boilerplate",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "shopify app dev",
+    "build": "vp build",
+    "preview": "vp preview",
+    "check": "vp check",
+    "test": "vp test",
+    "codegen": "graphql-codegen",
+    "postinstall": "void prepare"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^15.1.1",
+    "@shopify/shopify-app-session-storage": "^7.0.3",
+    "@shopify/shopify-app-session-storage-drizzle": "^6.0.3",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.13.19",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "valibot": "^1.5.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.3.1",
+    "@shopify/admin-api-client": "^2.0.1",
+    "@shopify/api-codegen-preset": "^3.0.1",
+    "@shopify/app-bridge-types": "^0.7.4",
+    "@shopify/polaris-types": "^2.0.0",
+    "@stylistic/eslint-plugin": "^6.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@void/react": "1.9.1",
+    "graphql": "^16.14.2",
+    "oxc-transform-react": "^0.156.0",
+    "typescript": "^7.0.2",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^1.6.0",
+    "vite-plus": "^1.6.0",
+    "void": "1.9.1"
+  }
+}

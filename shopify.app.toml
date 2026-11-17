@@ -1,0 +1,49 @@
+# https://shopify.dev/docs/apps/build/cli-for-apps/app-configuration
+
+client_id = ""
+name = "Boilerplate Dev"
+# `shopify app dev` points your dev store at its tunnel. Set your deployed URL before `shopify app deploy`.
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+# Shopify managed installation: Shopify installs the app and prompts for these scopes without calling
+# the app. `shopify app deploy` is the only step needed to change them.
+[access_scopes]
+scopes = "read_products,write_products,write_app_proxy"
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = []
+
+[webhooks]
+api_version = "2026-10"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/webhooks"
+
+  [[webhooks.subscriptions]]
+  compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+  uri = "/webhooks"
+
+  # Keeps the shop table current between merchant visits. The handler ignores the payload.
+  [[webhooks.subscriptions]]
+  topics = ["shop/update"]
+  uri = "/webhooks"
+  include_fields = ["updated_at"]
+
+  # Example: keep payloads small, because the queue caps messages at 128 KB. Include updated_at, or
+  # Shopify drops deliveries whose trimmed payload hasn't changed.
+  [[webhooks.subscriptions]]
+  topics = ["products/update"]
+  uri = "/webhooks"
+  include_fields = ["admin_graphql_api_id", "updated_at"]
+
+# https://{shop}/apps/void-boilerplate proxies to {application_url}/proxy
+[app_proxy]
+url = "/proxy"
+prefix = "apps"
+subpath = "void-boilerplate"

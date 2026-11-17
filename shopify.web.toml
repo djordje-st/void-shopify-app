@@ -1,0 +1,7 @@
+name = "void"
+roles = ["frontend", "backend"]
+webhooks_path = "/webhooks"
+
+[commands]
+dev = "pnpm exec vp dev"
+build = "pnpm exec vp build"

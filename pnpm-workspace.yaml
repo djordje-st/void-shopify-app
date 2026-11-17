@@ -1,0 +1,15 @@
+allowBuilds:
+  "@parcel/watcher": false
+  better-sqlite3: false
+  esbuild: true
+  sharp: true
+  workerd: true
+overrides:
+  # A peer of @stylistic/eslint-plugin that it never imports, because Oxlint runs its rules.
+  eslint: "-"
+  vite@*: npm:@voidzero-dev/vite-plus-core@^1.6.0
+  # void 1.9.1 reads build output v0, and the 2.0.0 release candidates write v1. Remove with void 1.10.
+  "@cloudflare/vite-plugin": 2.0.0-beta.v.17
+peerDependencyRules:
+  allowedVersions:
+    vite: "*"

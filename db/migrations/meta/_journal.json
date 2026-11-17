@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1794940636564,
+      "tag": "20261117183716_supreme_black_panther",
+      "breakpoints": true
+    }
+  ]
+}

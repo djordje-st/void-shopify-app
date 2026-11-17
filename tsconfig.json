@@ -1,0 +1,26 @@
+{
+  "extends": "./.void/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["void/env", "@shopify/polaris-types", "@shopify/app-bridge-types"],
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src",
+    "pages",
+    "routes",
+    "middleware",
+    "crons",
+    "queues",
+    "db",
+    "lint",
+    "types",
+    "tests",
+    "env.ts"
+  ]
+}
